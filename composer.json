@@ -170,7 +170,7 @@
         "magento/module-translation": "100.2.0-dev",
         "magento/module-ui": "100.2.0-dev",
         "magento/module-ups": "100.2.0-dev",
-        "magento/module-url-processor": "100.2.2-dev"
+        "magento/module-url-processor": "100.2.2-dev",
         "magento/module-url-rewrite": "100.2.0-dev",
         "magento/module-user": "100.2.0-dev",
         "magento/module-usps": "100.2.0-dev",
