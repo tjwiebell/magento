@@ -63,7 +63,7 @@ class Router implements RouterInterface
         }
 
         $request->setPathInfo($this->supportedPageIds[$params['actionID']]);
-        return $this->actionFactory->create('Magento\Framework\App\Action\Forward', [
+        return $this->actionFactory->create(\Magento\Framework\App\Action\Forward::class, [
             'request' => $request
         ]);
     }
