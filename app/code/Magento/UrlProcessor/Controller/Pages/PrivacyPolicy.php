@@ -8,15 +8,34 @@
 
 namespace Magento\UrlProcessor\Controller\Pages;
 
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
+
 class PrivacyPolicy extends \Magento\Framework\App\Action\Action
 {
+    /**
+     * @var PageFactory $pageFactory
+     */
+    protected $pageFactory;
 
     /**
-     * @inheritdoc
+     * PrivacyPolicy constructor.
+     * @param Context $context
+     * @param PageFactory $pageFactory
+     */
+    public function __construct(Context $context, PageFactory $pageFactory)
+    {
+        $this->pageFactory = $pageFactory;
+        parent::__construct($context);
+    }
+
+    /**
+     * Execute method
+     *
+     * @return \Magento\Framework\View\Result\Page
      */
     public function execute()
     {
-        $this->_view->loadLayout();
-        $this->_view->renderLayout();
+        return $this->pageFactory->create();
     }
 }
