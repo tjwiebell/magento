@@ -9,8 +9,8 @@
     <type name="Magento\UrlProcessor\Controller\Router">
         <arguments>
             <argument name="supportedPageIds" xsi:type="array">
-                <item name="login-url" xsi:type="string">/customer/account/login</item>
-                <item name="privacy-policy" xsi:type="string">/privacy-policy-cookie-restriction-mode</item>
+                <item name="login-url" xsi:type="string">custom/pages/loginurl</item>
+                <item name="privacy-policy" xsi:type="string">custom/pages/privacypolicy</item>
             </argument>
         </arguments>
     </type>
