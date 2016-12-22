@@ -1,6 +1,6 @@
 <?php
 /**
- * PrivacyPolicy Action
+ * Index Action Controller
  *
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -8,10 +8,10 @@
 
 namespace Magento\UrlProcessor\Controller\Pages;
 
-use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
+use Magento\Framework\App\Action\Context;
 
-class PrivacyPolicy extends \Magento\Framework\App\Action\Action
+class Index extends \Magento\Framework\App\Action\Action
 {
     /**
      * @var PageFactory $pageFactory
@@ -19,7 +19,7 @@ class PrivacyPolicy extends \Magento\Framework\App\Action\Action
     protected $pageFactory;
 
     /**
-     * PrivacyPolicy constructor.
+     * Index constructor.
      * @param Context $context
      * @param PageFactory $pageFactory
      */
@@ -30,7 +30,7 @@ class PrivacyPolicy extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * Execute method
+     * Execute method. Creates page using factory.
      *
      * @return \Magento\Framework\View\Result\Page
      */

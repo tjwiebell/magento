@@ -44,8 +44,9 @@ class Router implements RouterInterface
     }
 
     /**
-     * Match application action by request. If path doesn't begin with custom/ return null to continue router cycle.
-     * If ID is not in supported list, continue with router cycle. Matched IDs will be forwarded to correct action.
+     * Match application action by request. If path does not begin with custom/ return null to continue router cycle.
+     * If ID is not in supported list, continue with router cycle. Matched IDs will be forwarded to a shared action
+     * which will load a simple default layout
      *
      * @param RequestInterface $request
      * @return ActionInterface|null
@@ -62,10 +63,12 @@ class Router implements RouterInterface
             return null;
         }
 
-        $request->setPathInfo($this->supportedPageIds[$params['actionID']]);
-        return $this->actionFactory->create(\Magento\Framework\App\Action\Forward::class, [
-            'request' => $request
-        ]);
+        $request->setModuleName('custom')
+            ->setControllerName('pages')
+            ->setActionName('index')
+            ->setParam('title', $this->supportedPageIds[$params['actionID']]);
+
+        return $this->actionFactory->create(\Magento\Framework\App\Action\Forward::class);
     }
 
     /**
